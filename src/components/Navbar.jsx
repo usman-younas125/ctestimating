@@ -1,16 +1,17 @@
 import { useState } from 'react';
-import { Menu, X, HardHat } from 'lucide-react';
+import { Menu, X, HardHat, FolderOpen } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Process', href: '#process' },
-    { name: 'Testimonials', href: '#testimonials' },
+    { name: 'Home', href: '/#home' },
+    { name: 'About', href: '/#about' },
+    { name: 'Services', href: '/#services' },
+    { name: 'Process', href: '/#process' },
+    { name: 'Testimonials', href: '/#testimonials' },
+    { name: 'Work Samples', href: '/work-samples' },
   ];
 
   return (
@@ -18,7 +19,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex-shrink-0 flex items-center">
-            <a href="#" className="flex items-center gap-2">
+            <a href="/" className="flex items-center gap-2">
               <HardHat className="h-8 w-8 text-brand-blue" />
               <div className="flex flex-col">
                 <span className="font-bold text-xl text-brand-dark leading-none">CT Estimating</span>
@@ -33,13 +34,25 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-600 hover:text-brand-blue font-medium transition-colors duration-200"
+                className={
+                  link.name === 'Work Samples'
+                    ? "text-brand-blue font-bold flex items-center gap-1.5 bg-blue-50 px-4 py-2 rounded-full transition-all duration-300 hover:bg-brand-blue hover:text-white shadow-sm hover:shadow-md"
+                    : "relative text-gray-600 hover:text-brand-blue font-medium transition-colors duration-300 group"
+                }
               >
-                {link.name}
+                {link.name === 'Work Samples' && <FolderOpen className="w-4 h-4" />}
+                {link.name !== 'Work Samples' ? (
+                  <span className="relative">
+                    {link.name}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-blue transition-all duration-300 group-hover:w-full"></span>
+                  </span>
+                ) : (
+                  link.name
+                )}
               </a>
             ))}
             <a
-              href="#contact"
+              href="/#contact"
               className="bg-brand-blue hover:bg-brand-dark text-white px-6 py-2.5 rounded-md font-semibold transition-colors duration-300 shadow-sm hover:shadow-md"
             >
               Get a Quote
@@ -78,13 +91,18 @@ const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-gray-50"
+                  className={
+                    link.name === 'Work Samples'
+                      ? "flex items-center gap-2 px-3 py-2 rounded-md text-base font-bold text-brand-blue bg-blue-50 hover:bg-brand-blue hover:text-white transition-all duration-300"
+                      : "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-gray-50 transition-colors duration-300"
+                  }
                 >
+                  {link.name === 'Work Samples' && <FolderOpen className="w-5 h-5" />}
                   {link.name}
                 </a>
               ))}
               <a
-                href="#contact"
+                href="/#contact"
                 onClick={() => setIsOpen(false)}
                 className="block w-full text-center mt-4 bg-brand-blue hover:bg-brand-dark text-white px-6 py-3 rounded-md font-semibold transition-colors duration-300"
               >

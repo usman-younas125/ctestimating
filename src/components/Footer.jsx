@@ -29,7 +29,7 @@ const Footer = () => {
               Professional construction estimating services providing accurate takeoffs and cost estimation to help you win more profitable projects.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://www.facebook.com/share/1BHfMsbgTc/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <span className="sr-only">Facebook</span>
                 <SocialIcon type="facebook" />
               </a>

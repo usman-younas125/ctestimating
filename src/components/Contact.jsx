@@ -83,7 +83,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="text-sm text-gray-400">Location</p>
-                      <p className="font-semibold">Lilburn, GA</p>
+                      <p className="font-semibold">Georgia, USA</p>
                     </div>
                   </div>
                 </div>
