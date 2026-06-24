@@ -13,8 +13,8 @@ const Contact = () => {
     
     const formData = new FormData(event.target);
 
-    // TODO: Yahan par aap apni Web3Forms ki Access Key dalein
-    formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+    // Web3Forms Access Key for info@ctestimating.com
+    formData.append("access_key", "4324ae6e-0fb7-4857-a330-ddfb10103dff");
     
     // Custom subject line
     formData.append("subject", "New Estimate Request from CT Estimating");
@@ -62,8 +62,8 @@ const Contact = () => {
                       <Phone className="w-5 h-5 text-brand-light" />
                     </div>
                     <div>
-                      <p className="text-sm text-gray-400">Call Us</p>
-                      <p className="font-semibold">+1 (678) 261-9352</p>
+                      <p className="text-sm text-gray-400">Number/Whatsapp</p>
+                      <p className="font-semibold">(678) 261-9352</p>
                     </div>
                   </div>
                   
@@ -82,8 +82,8 @@ const Contact = () => {
                       <MapPin className="w-5 h-5 text-brand-light" />
                     </div>
                     <div>
-                      <p className="text-sm text-gray-400">Location</p>
-                      <p className="font-semibold">Georgia, USA</p>
+                      <p className="text-sm text-gray-400">Address</p>
+                      <p className="font-semibold">We are Based in Georgia, USA</p>
                     </div>
                   </div>
                 </div>

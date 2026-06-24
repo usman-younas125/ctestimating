@@ -18,12 +18,8 @@ const Footer = () => {
           
           {/* Brand */}
           <div className="col-span-1 lg:col-span-1">
-            <a href="#" className="flex items-center gap-2 mb-6">
-              <HardHat className="h-8 w-8 text-brand-light" />
-              <div className="flex flex-col">
-                <span className="font-bold text-xl text-white leading-none">CT Estimating</span>
-                <span className="text-[10px] text-brand-light font-semibold uppercase tracking-wider">Bid To Win</span>
-              </div>
+            <a href="#" className="flex items-center mb-6">
+              <img src="/ctestimating.png" alt="CT Estimating Logo" className="h-16 w-auto object-contain brightness-0 invert" />
             </a>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Professional construction estimating services providing accurate takeoffs and cost estimation to help you win more profitable projects.
