@@ -58,7 +58,7 @@ const Contact = () => {
 
                 <div className="space-y-6">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shrink-0">
                       <Phone className="w-5 h-5 text-brand-light" />
                     </div>
                     <div>
@@ -68,17 +68,17 @@ const Contact = () => {
                   </div>
                   
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shrink-0">
                       <Mail className="w-5 h-5 text-brand-light" />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <p className="text-sm text-gray-400">Email Us</p>
-                      <p className="font-semibold">Info.ctestimating@gmail.com</p>
+                      <p className="font-semibold break-all sm:break-normal">Info.ctestimating@gmail.com</p>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center">
+                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shrink-0">
                       <MapPin className="w-5 h-5 text-brand-light" />
                     </div>
                     <div>

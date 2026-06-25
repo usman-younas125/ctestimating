@@ -6,34 +6,45 @@ const Process = () => {
     {
       title: 'Submit Plans',
       description: 'Upload your digital blueprints and project specifications through our secure portal.',
-      icon: <UploadCloud className="w-8 h-8 text-brand-blue" />,
+      icon: <UploadCloud className="w-8 h-8 text-blue-500" />,
       stepNum: '01'
     },
     {
       title: 'Review & Scope',
       description: 'Our team reviews the documents and provides a formal quote and turnaround time.',
-      icon: <Search className="w-8 h-8 text-brand-blue" />,
+      icon: <Search className="w-8 h-8 text-blue-500" />,
       stepNum: '02'
     },
     {
       title: 'Estimation',
       description: 'We perform a detailed takeoff and cost analysis using the latest market data.',
-      icon: <PenTool className="w-8 h-8 text-brand-blue" />,
+      icon: <PenTool className="w-8 h-8 text-blue-500" />,
       stepNum: '03'
     },
     {
       title: 'Delivery',
       description: 'Receive your comprehensive, Excel-formatted estimate ready for bid submission.',
-      icon: <Send className="w-8 h-8 text-brand-blue" />,
+      icon: <Send className="w-8 h-8 text-blue-500" />,
       stepNum: '04'
     }
   ];
 
   return (
     <section id="process" className="py-20 bg-brand-dark relative overflow-hidden">
-      {/* Abstract Background Element */}
-      <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-brand-blue/10 blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-brand-light/10 blur-3xl pointer-events-none"></div>
+
+      {/* === GIF Background === */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/estimation.gif"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-30"
+        />
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-brand-dark/85"></div>
+      </div>
+      {/* Decorative blurs */}
+      <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-brand-blue/10 blur-3xl pointer-events-none z-0"></div>
+      <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-brand-light/10 blur-3xl pointer-events-none z-0"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -69,9 +80,9 @@ const Process = () => {
               )}
 
               <div className="flex flex-col items-center text-center">
-                <div className="w-24 h-24 rounded-full bg-gray-800 border-4 border-brand-dark flex items-center justify-center mb-6 relative group-hover:bg-gray-700 transition-colors duration-300 shadow-xl">
+                <div className="w-24 h-24 rounded-full bg-[#1e293b] border-4 border-[#0f172a] flex items-center justify-center mb-6 relative group-hover:bg-[#334155] transition-colors duration-300 shadow-[0_0_20px_rgba(0,0,0,0.4)]">
                   {step.icon}
-                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-brand-light rounded-full flex items-center justify-center text-white font-bold text-xs border-2 border-brand-dark">
+                  <div className="absolute -top-1 -right-2 w-9 h-9 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm border-4 border-[#0f172a] shadow-lg">
                     {step.stepNum}
                   </div>
                 </div>
@@ -89,3 +100,4 @@ const Process = () => {
 };
 
 export default Process;
+

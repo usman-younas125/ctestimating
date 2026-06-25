@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X, HardHat, FolderOpen } from 'lucide-react';
+import { Menu, X, HardHat, FolderOpen, Phone, Mail, Clock } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
@@ -15,12 +15,34 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed w-full bg-white shadow-md z-50 transition-all duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20">
+    <nav className="fixed w-full z-50 transition-all duration-300">
+      {/* Top Bar */}
+      <div className="bg-[#1e293b] text-gray-300 py-2 border-b border-gray-700 hidden lg:block">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-xs font-medium tracking-wide">
+          <div className="flex items-center gap-6">
+            <a href="mailto:info@ctestimating.com" className="flex items-center gap-2 hover:text-white transition-colors">
+              <Mail className="w-4 h-4 text-brand-blue" />
+              info@ctestimating.com
+            </a>
+            <a href="tel:6782619352" className="flex items-center gap-2 hover:text-white transition-colors">
+              <Phone className="w-4 h-4 text-brand-blue" />
+              (678) 261-9352
+            </a>
+          </div>
+          <div className="flex items-center gap-2">
+            <Clock className="w-4 h-4 text-brand-blue" />
+            Mon - Fri: 8:00 AM - 6:00 PM
+          </div>
+        </div>
+      </div>
+
+      {/* Main Navbar */}
+      <div className="bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-20">
           <div className="flex-shrink-0 flex items-center">
             <a href="/" className="flex items-center">
-              <img src="/ctestimating.png" alt="CT Estimating Logo" className="h-14 w-auto object-contain" />
+              <img src="/logoestimate.png" alt="CT Estimating" className="h-14 w-auto object-contain" />
             </a>
           </div>
           
@@ -69,6 +91,7 @@ const Navbar = () => {
               )}
             </button>
           </div>
+        </div>
         </div>
       </div>
 

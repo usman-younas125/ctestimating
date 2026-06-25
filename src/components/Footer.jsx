@@ -1,4 +1,5 @@
 import { HardHat } from 'lucide-react';
+import { useState } from 'react';
 
 const SocialIcon = ({ type }) => {
   const icons = {
@@ -11,6 +12,37 @@ const SocialIcon = ({ type }) => {
 };
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState('');
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    if (!email) return;
+    
+    setStatus('submitting');
+    const formData = new FormData();
+    formData.append("access_key", "4324ae6e-0fb7-4857-a330-ddfb10103dff");
+    formData.append("subject", "New Newsletter Subscriber");
+    formData.append("email", email);
+    formData.append("message", "A new user has subscribed to the newsletter.");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+      const data = await response.json();
+      if (data.success) {
+        setStatus('success');
+        setEmail('');
+      } else {
+        setStatus('error');
+      }
+    } catch (err) {
+      setStatus('error');
+    }
+  };
+
   return (
     <footer className="bg-brand-dark pt-16 pb-8 border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,8 +50,12 @@ const Footer = () => {
           
           {/* Brand */}
           <div className="col-span-1 lg:col-span-1">
-            <a href="#" className="flex items-center mb-6">
-              <img src="/ctestimating.png" alt="CT Estimating Logo" className="h-16 w-auto object-contain brightness-0 invert" />
+            <a href="/" className="flex items-center mb-6">
+              <img 
+                src="/logoestimate.png" 
+                alt="CT Estimating Logo" 
+                className="h-20 w-auto object-contain"
+              />
             </a>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Professional construction estimating services providing accurate takeoffs and cost estimation to help you win more profitable projects.
@@ -28,18 +64,6 @@ const Footer = () => {
               <a href="https://www.facebook.com/share/1BHfMsbgTc/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <span className="sr-only">Facebook</span>
                 <SocialIcon type="facebook" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <span className="sr-only">Twitter</span>
-                <SocialIcon type="twitter" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <span className="sr-only">LinkedIn</span>
-                <SocialIcon type="linkedin" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <span className="sr-only">Instagram</span>
-                <SocialIcon type="instagram" />
               </a>
             </div>
           </div>
@@ -72,19 +96,33 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-bold mb-6">Newsletter</h4>
             <p className="text-gray-400 text-sm mb-4">Subscribe to our newsletter for the latest industry insights and estimating tips.</p>
-            <form className="flex">
-              <input 
-                type="email" 
-                placeholder="Email Address" 
-                className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-l-md text-white focus:outline-none focus:border-brand-blue"
-              />
-              <button 
-                type="submit" 
-                className="bg-brand-blue hover:bg-blue-600 px-4 py-2 rounded-r-md text-white font-semibold transition-colors"
-              >
-                Go
-              </button>
-            </form>
+            {status === 'success' ? (
+              <p className="text-green-400 text-sm p-3 bg-green-400/10 rounded-md border border-green-400/20">Thanks for subscribing!</p>
+            ) : (
+              <form onSubmit={handleSubscribe} className="flex flex-col gap-2">
+                <div className="flex">
+                  <input 
+                    type="email" 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Email Address" 
+                    required
+                    disabled={status === 'submitting'}
+                    className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-l-md text-white focus:outline-none focus:border-brand-blue disabled:opacity-50"
+                  />
+                  <button 
+                    type="submit" 
+                    disabled={status === 'submitting'}
+                    className="bg-brand-blue hover:bg-blue-600 px-4 py-2 rounded-r-md text-white font-semibold transition-colors disabled:bg-gray-600 flex items-center justify-center min-w-[50px]"
+                  >
+                    {status === 'submitting' ? '...' : 'Go'}
+                  </button>
+                </div>
+                {status === 'error' && (
+                  <p className="text-red-400 text-xs mt-1">Something went wrong. Please try again.</p>
+                )}
+              </form>
+            )}
           </div>
 
         </div>

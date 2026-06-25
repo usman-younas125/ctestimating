@@ -102,40 +102,40 @@ const WorkSamples = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-28 pb-20">
+    <div className="min-h-screen bg-gray-50 pt-20 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="mb-8">
+        <div className="mb-4">
           <Link to="/" className="inline-flex items-center text-brand-blue hover:text-brand-dark transition-colors font-medium">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Home
           </Link>
         </div>
 
-        <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-5xl font-bold text-brand-dark mb-4">Our Work Samples</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <div className="text-center mb-6">
+          <h1 className="text-2xl md:text-4xl font-bold text-brand-dark mb-2">Our Work Samples</h1>
+          <p className="text-sm md:text-base text-gray-600 max-w-2xl mx-auto">
             Download our comprehensive estimating samples to see the level of detail and accuracy we bring to every project.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
           {samples.map((sample) => (
-            <div key={sample.id} className="bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 flex items-center justify-between p-3">
-              <div className="flex items-center gap-3 overflow-hidden">
+            <div key={sample.id} className="bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between p-3 gap-3">
+              <div className="flex items-center gap-3">
                 <div className="bg-green-50 p-2 rounded-md text-green-600 shrink-0">
                   <FileSpreadsheet className="w-5 h-5" />
                 </div>
-                <div className="truncate">
-                  <h3 className="text-sm font-bold text-brand-dark truncate">{sample.title}</h3>
-                  <p className="text-gray-500 text-xs truncate hidden sm:block">{sample.description}</p>
+                <div>
+                  <h3 className="text-sm font-bold text-brand-dark leading-tight">{sample.title}</h3>
+                  <p className="text-gray-500 text-xs hidden sm:block mt-0.5">{sample.description}</p>
                 </div>
               </div>
               
-              <div className="flex gap-2 ml-4 shrink-0">
+              <div className="flex gap-2 sm:ml-4 shrink-0 w-full sm:w-auto">
                 <a 
                   href={`ms-excel:ofv|u|${window.location.origin}${sample.file}`}
-                  className="flex items-center justify-center gap-1.5 bg-brand-blue hover:bg-brand-dark text-white px-3 py-1.5 rounded-md font-medium transition-colors duration-300 shadow-sm text-xs"
+                  className="flex-1 sm:flex-none flex items-center justify-center gap-1.5 bg-brand-blue hover:bg-brand-dark text-white px-3 py-1.5 rounded-md font-medium transition-colors duration-300 shadow-sm text-xs"
                 >
                   <Eye className="w-3.5 h-3.5" />
                   View
@@ -143,7 +143,7 @@ const WorkSamples = () => {
                 <a 
                   href={sample.file} 
                   download
-                  className="flex items-center justify-center gap-1.5 bg-gray-50 hover:bg-gray-100 text-brand-dark px-3 py-1.5 rounded-md font-medium transition-colors duration-300 border border-gray-200 text-xs"
+                  className="flex-1 sm:flex-none flex items-center justify-center gap-1.5 bg-gray-50 hover:bg-gray-100 text-brand-dark px-3 py-1.5 rounded-md font-medium transition-colors duration-300 border border-gray-200 text-xs"
                 >
                   <Download className="w-3.5 h-3.5" />
                   Download

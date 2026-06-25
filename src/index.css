@@ -10,3 +10,49 @@
     @apply font-sans text-gray-800 bg-white;
   }
 }
+
+/* Work Samples Button Animation */
+.work-sample-btn {
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  transition: color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.work-sample-btn:hover {
+  border-color: white;
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.15), 0 8px 20px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.work-sample-shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  animation: shimmer-slide 2.4s ease-in-out infinite;
+}
+
+@keyframes shimmer-slide {
+  0%   { left: -100%; opacity: 0; }
+  20%  { opacity: 1; }
+  60%  { left: 140%; opacity: 1; }
+  100% { left: 140%; opacity: 0; }
+}
+
+/* Marquee animation for software slider */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
