@@ -11,12 +11,12 @@ const About = () => {
       a: 'Because of our continuous workload and the need to obtain the most recent costs for your project, we strive to have estimates ready in three to five working days.',
     },
     {
-      q: 'Why should I choose City Estimating?',
-      a: 'In order to deliver a personalized cost estimation service, City Estimating collaborates with you to identify your priorities. It makes it possible for us to deliver you a customized report that will make it easier to evaluate return tenders and provide you a deeper understanding of the whole building process, ultimately resulting in more seamless projects.',
+      q: 'Why should I choose CT Estimating?',
+      a: 'In order to deliver a personalized cost estimation service, CT Estimating collaborates with you to identify your priorities. It makes it possible for us to deliver you a customized report that will make it easier to evaluate return tenders and provide you a deeper understanding of the whole building process, ultimately resulting in more seamless projects.',
     },
     {
-      q: 'Why is City Estimator Different from other Services?',
-      a: 'City estimator provides a distinct project estimating service, which we are able to provide thanks to our solid working connections with regional vendors and professionals. It implies that the estimate you get will be more accurate because local labor and material rates were used instead of depending on national averages.',
+      q: 'Why is CT Estimator Different from other Services?',
+      a: 'CT estimator provides a distinct project estimating service, which we are able to provide thanks to our solid working connections with regional vendors and professionals. It implies that the estimate you get will be more accurate because local labor and material rates were used instead of depending on national averages.',
     },
     {
       q: 'What do You Need to do a Takeoff or Electrical Estimate?',
