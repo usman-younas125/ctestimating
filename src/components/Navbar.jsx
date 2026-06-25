@@ -19,11 +19,17 @@ const Navbar = () => {
       {/* Top Bar */}
       <div className="bg-[#1e293b] text-gray-300 py-2 border-b border-gray-700 hidden lg:block">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-xs font-medium tracking-wide">
-          <div className="flex items-center gap-6">
-            <a href="mailto:info@ctestimating.com" className="flex items-center gap-2 hover:text-white transition-colors">
-              <Mail className="w-4 h-4 text-brand-blue" />
-              info@ctestimating.com
-            </a>
+          <div className="flex items-center gap-4 lg:gap-6">
+            <div className="flex items-center gap-4">
+              <a href="mailto:info@ctestimating.com" className="flex items-center gap-2 hover:text-white transition-colors">
+                <Mail className="w-4 h-4 text-brand-blue" />
+                info@ctestimating.com
+              </a>
+              <span className="text-gray-600">|</span>
+              <a href="mailto:Info.ctestimating@gmail.com" className="flex items-center gap-2 hover:text-white transition-colors">
+                Info.ctestimating@gmail.com
+              </a>
+            </div>
             <a href="tel:6782619352" className="flex items-center gap-2 hover:text-white transition-colors">
               <Phone className="w-4 h-4 text-brand-blue" />
               (678) 261-9352

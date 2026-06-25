@@ -71,10 +71,10 @@ const Contact = () => {
                     <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shrink-0">
                       <Mail className="w-5 h-5 text-brand-light" />
                     </div>
-                    <div className="min-w-0">
-                      <p className="text-sm text-gray-400">Email Us</p>
-                      <p className="font-semibold break-all sm:break-normal">info@ctestimating.com</p>
-                      <p className="font-semibold break-all sm:break-normal text-sm mt-1">Info.ctestimating@gmail.com</p>
+                    <div className="min-w-0 flex flex-col items-start">
+                      <p className="text-sm text-gray-400 mb-1">Email Us</p>
+                      <a href="mailto:info@ctestimating.com" className="font-semibold break-all sm:break-normal hover:text-brand-light transition-colors">info@ctestimating.com</a>
+                      <a href="mailto:Info.ctestimating@gmail.com" className="font-semibold break-all sm:break-normal text-sm mt-1 hover:text-brand-light transition-colors">Info.ctestimating@gmail.com</a>
                     </div>
                   </div>
 
