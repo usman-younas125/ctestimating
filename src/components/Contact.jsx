@@ -14,7 +14,7 @@ const Contact = () => {
     const formData = new FormData(event.target);
 
     // Web3Forms Access Key for info@ctestimating.com
-    formData.append("access_key", "4324ae6e-0fb7-4857-a330-ddfb10103dff");
+    formData.append("access_key", "e31ae107-a551-4e3a-ae75-6b3265451d9c");
     
     // Custom subject line
     formData.append("subject", "New Estimate Request from CT Estimating");
@@ -73,7 +73,8 @@ const Contact = () => {
                     </div>
                     <div className="min-w-0">
                       <p className="text-sm text-gray-400">Email Us</p>
-                      <p className="font-semibold break-all sm:break-normal">Info.ctestimating@gmail.com</p>
+                      <p className="font-semibold break-all sm:break-normal">info@ctestimating.com</p>
+                      <p className="font-semibold break-all sm:break-normal text-sm mt-1">Info.ctestimating@gmail.com</p>
                     </div>
                   </div>
 

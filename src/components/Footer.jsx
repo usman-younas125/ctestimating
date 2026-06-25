@@ -21,7 +21,7 @@ const Footer = () => {
     
     setStatus('submitting');
     const formData = new FormData();
-    formData.append("access_key", "4324ae6e-0fb7-4857-a330-ddfb10103dff");
+    formData.append("access_key", "e31ae107-a551-4e3a-ae75-6b3265451d9c");
     formData.append("subject", "New Newsletter Subscriber");
     formData.append("email", email);
     formData.append("message", "A new user has subscribed to the newsletter.");

@@ -87,11 +87,11 @@ const About = () => {
           >
             <h2 className="text-brand-blue font-bold tracking-wider uppercase text-sm mb-2">About Us</h2>
             <h3 className="text-3xl md:text-4xl font-extrabold text-brand-dark mb-4 leading-tight">
-              City Estimating <span className="text-brand-blue">LLC</span>
+              CT Estimating <span className="text-brand-blue">LLC</span>
             </h3>
             <p className="text-xs font-semibold text-brand-blue uppercase tracking-wider mb-4">Registered in Georgia</p>
             <p className="text-gray-600 mb-5 text-base leading-relaxed">
-              At City Estimating, LLC, we believe that high-performance design is good design. Our range of in-house expertise enables us to work in a way that is holistic, integrative, and data-driven.
+              At CT Estimating, LLC, we believe that high-performance design is good design. Our range of in-house expertise enables us to work in a way that is holistic, integrative, and data-driven.
             </p>
             <p className="text-gray-600 mb-8 leading-relaxed text-sm">
               Beginning in the earliest stages of a project, we use software tools to help us understand how our design decisions are impacting energy use, the quality of the indoor environment, and carbon emissions, to name a few. Throughout the design, we use iterative modeling to optimize both passive strategies and active systems, enabling a design process that often results in a higher-performing building without compromising project schedules and budgets.
