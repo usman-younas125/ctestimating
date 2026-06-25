@@ -26,6 +26,8 @@ const Hero = () => {
             key={src}
             src={src}
             alt="CT Estimating Background"
+            fetchpriority={i === 0 ? "high" : "auto"}
+            decoding="async"
             className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000"
             style={{ opacity: i === activeImg ? 1 : 0 }}
           />
@@ -47,10 +49,10 @@ const Hero = () => {
               CT Estimating
             </h2>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
-              Construction Success <span className="text-brand-light">But Recession</span> — Let's Multisite
+              Turn Your Bids Into <span className="text-brand-light">High-Value Deals</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed">
-              Contractors don't have time, so we help them reduce their workload by providing them with Accurate Construction Cost Estimations.
+              Premium clients don't look for the cheapest option — they choose bids that reflect quality, confidence, and professionalism. Winning bids start with accurate estimates.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 items-start">

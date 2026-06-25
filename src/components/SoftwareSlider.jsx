@@ -30,6 +30,8 @@ const SoftwareSlider = () => {
               <img 
                 src={logo.src} 
                 alt={logo.name} 
+                loading="lazy"
+                decoding="async"
                 className="max-h-16 w-auto object-contain"
               />
             </div>
